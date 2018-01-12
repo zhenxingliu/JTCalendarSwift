@@ -27,9 +27,9 @@ class JTSCalendarPageView: UIView,JTSCalendarPage {
         }
     }
     
-    private weak var weekDayView:JTSCalendarWeekDayView?
-    private var weeksViews = [UIView]()
-    private var numberOfWeeksDisplayed: Int = 0
+    private var weekDayView:JTSCalendarWeekDayView?
+    private var weeksViews = [JTSCalendarWeekView]()
+    private var numberOfWeeksDisplayed: UInt = 0
     
     /*!
      * Must be call if override the class
@@ -49,14 +49,14 @@ class JTSCalendarPageView: UIView,JTSCalendarPage {
     }
     
     func reload() {
-        if (manager?.settings?.isPageViewHaveWeekDaysView)! && weekDayView != nil {
+        if (manager?.settings?.isPageViewHaveWeekDaysView)! && weekDayView == nil {
             weekDayView = manager?.delegateManager?.buildWeekDayView()
             addSubview(weekDayView!)
         }
         weekDayView?.manager = self.manager
         weekDayView?.reload()
         if weeksViews.isEmpty {
-            weeksViews = [UIView]()
+            weeksViews = [JTSCalendarWeekView]()
             for _ in 0..<MAX_WEEKS_BY_MONTH {
                 let weekView: JTSCalendarWeekView? = manager?.delegateManager?.buildWeekView()
                 weeksViews.append(weekView!)
@@ -66,31 +66,31 @@ class JTSCalendarPageView: UIView,JTSCalendarPage {
         }
         var weekDate: Date? = nil
         if (manager?.settings?.isWeekModeEnabled)! {
-            numberOfWeeksDisplayed = min(max((manager?.settings?.pageViewWeekModeNumberOfWeeks)!, 1), MAX_WEEKS_BY_MONTH)
+            numberOfWeeksDisplayed = UInt(min(max((manager?.settings?.pageViewWeekModeNumberOfWeeks)!, 1), MAX_WEEKS_BY_MONTH))
             weekDate = manager?.dateHelper?.firstWeekDayOfWeek(date!)
         }
         else {
-            numberOfWeeksDisplayed = min((manager?.settings?.pageViewNumberOfWeeks)!, MAX_WEEKS_BY_MONTH)
+            numberOfWeeksDisplayed = UInt(min((manager?.settings?.pageViewNumberOfWeeks)!, MAX_WEEKS_BY_MONTH))
             if numberOfWeeksDisplayed == 0 {
-                numberOfWeeksDisplayed = Int(manager?.dateHelper?.numberOfWeeks(date!) ?? 0)
+                numberOfWeeksDisplayed = manager?.dateHelper?.numberOfWeeks(date!) ?? 0
             }
             weekDate = manager?.dateHelper?.firstWeekDayOfMonth(date!)
         }
         for i in 0..<numberOfWeeksDisplayed {
-            let weekView = weeksViews[i] as? JTSCalendarWeekView
-            weekView?.isHidden = false
+            let weekView = weeksViews[Int(i)]
+            weekView.isHidden = false
             // Process the check on another month for the 1st, 4th and 5th weeks
             if i == 0 || i >= 4 {
-                weekView?.setStartDate(weekDate!, updateAnotherMonth: true, monthDate: date!)
+                weekView.setStartDate(weekDate!, updateAnotherMonth: true, monthDate: date!)
             }
             else {
-                weekView?.setStartDate(weekDate!, updateAnotherMonth: false, monthDate: date!)
+                weekView.setStartDate(weekDate!, updateAnotherMonth: false, monthDate: date!)
             }
             weekDate = manager?.dateHelper?.addToDate(weekDate!, weeks: 1)
         }
-        for i in numberOfWeeksDisplayed..<MAX_WEEKS_BY_MONTH {
-            let weekView = weeksViews[i] as?  JTSCalendarWeekView
-            weekView?.isHidden = true
+        for i in Int(numberOfWeeksDisplayed)..<MAX_WEEKS_BY_MONTH {
+            let weekView = weeksViews[i]
+            weekView.isHidden = true
         }
     }
     

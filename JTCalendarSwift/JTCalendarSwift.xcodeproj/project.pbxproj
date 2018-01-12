@@ -32,6 +32,7 @@
 		E47B63F020046E97007DAFB5 /* JTSHorizontalCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63EF20046E97007DAFB5 /* JTSHorizontalCalendarView.swift */; };
 		E47B63F220046EED007DAFB5 /* JTSVerticalCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63F120046EED007DAFB5 /* JTSVerticalCalendarView.swift */; };
 		E47EC6562007046300328535 /* JTSHVCalendarBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47EC6552007046300328535 /* JTSHVCalendarBaseView.swift */; };
+		E47EC65A20085FF500328535 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47EC65820085FF500328535 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E47B63EF20046E97007DAFB5 /* JTSHorizontalCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSHorizontalCalendarView.swift; sourceTree = "<group>"; };
 		E47B63F120046EED007DAFB5 /* JTSVerticalCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSVerticalCalendarView.swift; sourceTree = "<group>"; };
 		E47EC6552007046300328535 /* JTSHVCalendarBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSHVCalendarBaseView.swift; sourceTree = "<group>"; };
+		E47EC65820085FF500328535 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +80,9 @@
 		E47B63AB2001C3CD007DAFB5 = {
 			isa = PBXGroup;
 			children = (
-				E47B63C92001C6AD007DAFB5 /* JTCalendarSwiftLib */,
 				E47B63B62001C3CD007DAFB5 /* JTCalendarSwift */,
 				E47B63B52001C3CD007DAFB5 /* Products */,
+				E47B63C92001C6AD007DAFB5 /* JTCalendarSwiftLib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +97,7 @@
 		E47B63B62001C3CD007DAFB5 /* JTCalendarSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E47EC65720085FD400328535 /* BasicView */,
 				E47B63B72001C3CD007DAFB5 /* AppDelegate.swift */,
 				E47B63B92001C3CD007DAFB5 /* ViewController.swift */,
 				E47B63BB2001C3CD007DAFB5 /* Main.storyboard */,
@@ -154,6 +157,14 @@
 				E47EC6552007046300328535 /* JTSHVCalendarBaseView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E47EC65720085FD400328535 /* BasicView */ = {
+			isa = PBXGroup;
+			children = (
+				E47EC65820085FF500328535 /* BaseViewController.swift */,
+			);
+			path = BasicView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 				E47B63DC2001C89C007DAFB5 /* JTSCalendarWeekDay.swift in Sources */,
 				E47B63D82001C87F007DAFB5 /* JTSCalendarPage.swift in Sources */,
 				E47B63E22001C8CF007DAFB5 /* JTSCalendarDelegateManager.swift in Sources */,
+				E47EC65A20085FF500328535 /* BaseViewController.swift in Sources */,
 				E47B63EC20046DC1007DAFB5 /* JTSCalendarWeekDayView.swift in Sources */,
 				E47B63E02001C8B2007DAFB5 /* JTSMenu.swift in Sources */,
 				E47B63CB2001C779007DAFB5 /* JTSCalendarDelegate.swift in Sources */,

@@ -14,9 +14,12 @@ class JTSCalendarDelegateManager:NSObject {
     
     // MARK:- Menu View
     func buildMenuItemView() -> UIView {
+        if let view = manager?.delegate?.calendarBuildMenuItemView?(self.manager!) {
+            return view
+        }
         let label = UILabel()
         label.textAlignment = .center
-        return manager?.delegate?.calendarBuildMenuItemView?(self.manager!) ?? label
+        return label
     }
     
     //- (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date
@@ -44,36 +47,58 @@ class JTSCalendarDelegateManager:NSObject {
     
     // MARK:- Content View
     func buildPageView() -> JTSCalendarPageView {
-        return manager?.delegate?.calendarBuildPageView?(self.manager!) ?? JTSCalendarPageView()
+        //return manager?.delegate?.calendarBuildPageView?(self.manager!) ?? JTSCalendarPageView()
+        if let pageView = manager?.delegate?.calendarBuildPageView?(self.manager!) {
+            return pageView
+        }
+        return JTSCalendarPageView()
     }
     
     func canDisplayPageWithDate(_ date:Date) -> Bool {
-        return manager?.delegate?.calendar?(self.manager!, canDisplayPageWith: date) ?? true
+        if let canDisplay = manager?.delegate?.calendar?(self.manager!, canDisplayPageWith: date) {
+            return canDisplay
+        }
+        return true
     }
     
     //- (NSDate *)dateForPreviousPageWithCurrentDate:(NSDate *)currentDate
     func dateForPreviousPageWithCurrentDate(_ currentDate:Date?) -> Date{
         assert(currentDate != nil , "currentDate cannot be nil")
-        return manager?.delegate?.calendar?(self.manager!, dateForPreviousPageWithCurrentDate: currentDate!) ?? (manager?.settings?.isWeekModeEnabled == true ? manager?.dateHelper?.addToDate(currentDate!, weeks: -1) : manager?.dateHelper?.addToDate(currentDate!, months: -1))!
+        if let prevDate = manager?.delegate?.calendar?(self.manager!, dateForPreviousPageWithCurrentDate: currentDate!) {
+            return prevDate
+        }
+        return (manager?.settings?.isWeekModeEnabled == true ? manager?.dateHelper?.addToDate(currentDate!, weeks: -1) : manager?.dateHelper?.addToDate(currentDate!, months: -1))!
     }
     //- (NSDate *)dateForNextPageWithCurrentDate:(NSDate *)currentDate
     func dateForNextPageWithCurrentDate(_ currentDate:Date?) -> Date{
         assert(currentDate != nil , "currentDate cannot be nil")
-        return manager?.delegate?.calendar?(self.manager!, dateForNextPageWithCurrentDate:currentDate!) ?? (manager?.settings?.isWeekModeEnabled == true ? manager?.dateHelper?.addToDate(currentDate!, weeks: -1) : manager?.dateHelper?.addToDate(currentDate!, months: -1))!
+        if let nextDate = manager?.delegate?.calendar?(self.manager!, dateForNextPageWithCurrentDate:currentDate!) {
+            return nextDate
+        }
+        return (manager?.settings?.isWeekModeEnabled == true ? manager?.dateHelper?.addToDate(currentDate!, weeks: 1) : manager?.dateHelper?.addToDate(currentDate!, months: 1))!
     }
     
     // MARK:- page View
     func buildWeekDayView() -> JTSCalendarWeekDayView {
-        return manager?.delegate?.calendarBuildWeekDayView?(self.manager!) ?? JTSCalendarWeekDayView()
+        if let weekDayView = manager?.delegate?.calendarBuildWeekDayView?(self.manager!) {
+            return weekDayView
+        }
+        return JTSCalendarWeekDayView()
     }
     
     func buildWeekView() -> JTSCalendarWeekView {
-        return manager?.delegate?.calendarBuildWeekView?(self.manager!) ?? JTSCalendarWeekView()
+        if let weekView = manager?.delegate?.calendarBuildWeekView?(self.manager!) {
+            return weekView
+        }
+        return JTSCalendarWeekView()
     }
     
     // MARK:- Week View
     func buildDayView() -> JTSCalendarDayView {
-        return manager?.delegate?.calendarBuildDayView?(self.manager!) ?? JTSCalendarDayView()
+        if let dayView = manager?.delegate?.calendarBuildDayView?(self.manager!) {
+            return dayView
+        }
+        return JTSCalendarDayView()
     }
     
     // MARK:- Day View

@@ -64,7 +64,6 @@ class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
             self.repositionViews()
         }else if(size.height != lastSize.height){
             lastSize = size
-            
             scrollView?.frame = CGRect(x:(scrollView?.frame.origin.x)!,y: 0, width:(scrollView?.frame.size.width)!, height: size.height)
             scrollView?.contentSize = CGSize(width: (scrollView?.contentSize.width)!, height: size.height)
             leftView?.frame = CGRect(x: (leftView?.frame.origin.x)!, y: 0, width: (scrollView?.frame.size.width)!, height: size.height)
@@ -117,7 +116,28 @@ class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
         assert(manager != nil, "manager cannot be nil")
         if leftView == nil {
             leftView = manager?.delegateManager?.buildMenuItemView()
+            scrollView?.addSubview(leftView!)
+            centerView = manager?.delegateManager?.buildMenuItemView()
+            scrollView?.addSubview(centerView!)
+            rightView = manager?.delegateManager?.buildMenuItemView()
+            scrollView?.addSubview(rightView!)
         }
+        
+        manager?.delegateManager?.prepareMenuItemView(leftView!, previousDate)
+        manager?.delegateManager?.prepareMenuItemView(centerView!, currentDate)
+        manager?.delegateManager?.prepareMenuItemView(rightView!, nextDate)
+        
+        let haveLeftPage:Bool = (manager?.delegateManager?.canDisplayPageWithDate(previousDate!))!
+        let haveRightPage:Bool = (manager?.delegateManager?.canDisplayPageWithDate(nextDate!))!
+        
+        if (manager?.settings?.isPageViewHideWhenPossible)! {
+            leftView?.isHidden = !haveLeftPage
+            rightView?.isHidden = !haveRightPage
+        }else{
+            leftView?.isHidden = false
+            rightView?.isHidden = false
+        }
+        
     }
     
     func updatePageMode(pageMode: JTSCalendarPageMode) {

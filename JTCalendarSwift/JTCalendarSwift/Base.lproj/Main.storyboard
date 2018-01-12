@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,97 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JTCalendarSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIl-J6-GPq">
+                                <rect key="frame" x="154" y="318" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BaseView"/>
+                                <connections>
+                                    <segue destination="OjK-Ny-PGz" kind="show" id="yAw-DA-Vbu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="222" y="76"/>
+        </scene>
+        <!--Base View Controller-->
+        <scene sceneID="AFW-KP-lMz">
+            <objects>
+                <viewController id="OjK-Ny-PGz" customClass="BaseViewController" customModule="JTCalendarSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Shn-WK-3lB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ya3-Qn-DR4" customClass="JTSCalendarMenuView" customModule="JTCalendarSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pTD-XO-Ovh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D13-a4-XCe" customClass="JTSHorizontalCalendarView" customModule="JTCalendarSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="YCF-ZD-o2f"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKE-SL-J9r">
+                                <rect key="frame" x="226" y="386" width="128" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="C2f-B0-pbY"/>
+                                    <constraint firstAttribute="height" constant="30" id="jWY-r9-MuM"/>
+                                </constraints>
+                                <state key="normal" title="Change Mode"/>
+                                <connections>
+                                    <action selector="didChangeModeTouch:" destination="OjK-Ny-PGz" eventType="touchUpInside" id="QMM-67-hHx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LK2-X0-mA5">
+                                <rect key="frame" x="16" y="386" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="SMs-Oa-jXl"/>
+                                    <constraint firstAttribute="height" constant="30" id="noq-cI-3hc"/>
+                                </constraints>
+                                <state key="normal" title="Today"/>
+                                <connections>
+                                    <action selector="didGoTodayTouch:" destination="OjK-Ny-PGz" eventType="touchUpInside" id="Oud-FF-CVZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ya3-Qn-DR4" firstAttribute="leading" secondItem="VnH-AR-5bx" secondAttribute="leading" id="6qg-4b-rTt"/>
+                            <constraint firstItem="VnH-AR-5bx" firstAttribute="trailing" secondItem="cKE-SL-J9r" secondAttribute="trailing" constant="21" id="79m-Xw-dbn"/>
+                            <constraint firstItem="cKE-SL-J9r" firstAttribute="top" secondItem="D13-a4-XCe" secondAttribute="bottom" constant="36" id="GRQ-eY-BfD"/>
+                            <constraint firstItem="LK2-X0-mA5" firstAttribute="top" secondItem="D13-a4-XCe" secondAttribute="bottom" constant="36" id="JAs-xm-qMh"/>
+                            <constraint firstItem="LK2-X0-mA5" firstAttribute="leading" secondItem="VnH-AR-5bx" secondAttribute="leading" constant="16" id="Mig-lv-chK"/>
+                            <constraint firstItem="D13-a4-XCe" firstAttribute="trailing" secondItem="VnH-AR-5bx" secondAttribute="trailing" id="SQn-Tf-uix"/>
+                            <constraint firstItem="ya3-Qn-DR4" firstAttribute="trailing" secondItem="VnH-AR-5bx" secondAttribute="trailing" id="Ycv-ha-6Vw"/>
+                            <constraint firstItem="D13-a4-XCe" firstAttribute="top" secondItem="ya3-Qn-DR4" secondAttribute="bottom" id="dlo-WR-m1d"/>
+                            <constraint firstItem="D13-a4-XCe" firstAttribute="leading" secondItem="VnH-AR-5bx" secondAttribute="leading" id="f98-zi-DIW"/>
+                            <constraint firstItem="ya3-Qn-DR4" firstAttribute="top" secondItem="Shn-WK-3lB" secondAttribute="top" id="npS-35-YUb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VnH-AR-5bx"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarContentView" destination="D13-a4-XCe" id="hHy-5D-Xbz"/>
+                        <outlet property="calendarContentViewHeight" destination="YCF-ZD-o2f" id="Sh9-pt-Yjh"/>
+                        <outlet property="calendarMenuView" destination="ya3-Qn-DR4" id="F6v-zk-uz2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTn-lQ-nDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="-61"/>
         </scene>
     </scenes>
 </document>

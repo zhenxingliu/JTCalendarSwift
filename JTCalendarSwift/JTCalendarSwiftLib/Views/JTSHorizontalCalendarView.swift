@@ -32,29 +32,31 @@ class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
             assert(date != nil, "date cannot be nil")
             assert(manager != nil, "manager cannot be nil")
             _date = date
-            if leftView == nil {
-                leftView = manager?.delegateManager?.buildPageView()
-                addSubview(leftView!)
-                centerView = manager?.delegateManager?.buildPageView()
-                addSubview(centerView!)
-                rightView = manager?.delegateManager?.buildPageView()
-                addSubview(rightView!)
+            if self.leftView == nil {
+                self.leftView = manager?.delegateManager?.buildPageView()
+                addSubview(self.leftView!)
+                self.centerView = manager?.delegateManager?.buildPageView()
+                addSubview(self.centerView!)
+                self.rightView = manager?.delegateManager?.buildPageView()
+                addSubview(self.rightView!)
                 updateManagerForViews()
             }
-            leftView?.date = manager?.delegateManager?.dateForPreviousPageWithCurrentDate(date)
-            centerView?.date = date
-            rightView?.date = manager?.delegateManager?.dateForNextPageWithCurrentDate(date)
+            self.leftView?.date = manager?.delegateManager?.dateForPreviousPageWithCurrentDate(date)
+            self.centerView?.date = date
+            self.rightView?.date = manager?.delegateManager?.dateForNextPageWithCurrentDate(date)
             updateMenuDates()
             updatePageMode()
             repositionViews()
         }
     }
-
+    
     private var lastSize = CGSize.zero
-    private weak var leftView: JTSCalendarPageView?
-    private weak var centerView: JTSCalendarPageView?
-    private weak var rightView: JTSCalendarPageView?
+    private var leftView: JTSCalendarPageView?
+    private var centerView: JTSCalendarPageView?
+    private var rightView: JTSCalendarPageView?
     private var pageMode: JTSCalendarPageMode?
+
+
     
     /*!
      * Must be call if override the class

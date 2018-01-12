@@ -15,9 +15,9 @@ class JTSDateHelper: NSObject {
     var calendar:Calendar {
         get {
             if pCalendar == nil {
-                pCalendar = Calendar.init(identifier: .gregorian)
+                pCalendar = Calendar.init(identifier: .republicOfChina)
                 pCalendar.timeZone = TimeZone.current
-                pCalendar.locale = Locale.current
+                pCalendar.locale = Locale(identifier: "zh_CN")
             }
             return pCalendar
         }
@@ -81,7 +81,7 @@ class JTSDateHelper: NSObject {
     // MARK:- firstWeekDayOfMonth
     func firstWeekDayOfMonth(_ date:Date) -> Date {
         let firstDayOfMonth = self.firstDayOfMonth(date)
-        return self.firstWeekDayOfMonth(firstDayOfMonth)
+        return self.firstWeekDayOfWeek(firstDayOfMonth)
     }
     
     // MARK:- firstWeekDayOfWeek
