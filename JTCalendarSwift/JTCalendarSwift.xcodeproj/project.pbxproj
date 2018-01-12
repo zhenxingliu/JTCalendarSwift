@@ -12,6 +12,26 @@
 		E47B63BD2001C3CD007DAFB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47B63BB2001C3CD007DAFB5 /* Main.storyboard */; };
 		E47B63BF2001C3CD007DAFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47B63BE2001C3CD007DAFB5 /* Assets.xcassets */; };
 		E47B63C22001C3CD007DAFB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47B63C02001C3CD007DAFB5 /* LaunchScreen.storyboard */; };
+		E47B63CB2001C779007DAFB5 /* JTSCalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63CA2001C779007DAFB5 /* JTSCalendarDelegate.swift */; };
+		E47B63CD2001C7A8007DAFB5 /* JTSCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63CC2001C7A8007DAFB5 /* JTSCalendarManager.swift */; };
+		E47B63CF2001C7DA007DAFB5 /* JTSCalendarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63CE2001C7DA007DAFB5 /* JTSCalendarSettings.swift */; };
+		E47B63D12001C7F2007DAFB5 /* JTSDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63D02001C7F2007DAFB5 /* JTSDateHelper.swift */; };
+		E47B63D62001C873007DAFB5 /* JTSCalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63D52001C873007DAFB5 /* JTSCalendarDay.swift */; };
+		E47B63D82001C87F007DAFB5 /* JTSCalendarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63D72001C87F007DAFB5 /* JTSCalendarPage.swift */; };
+		E47B63DA2001C88B007DAFB5 /* JTSCalendarWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63D92001C88B007DAFB5 /* JTSCalendarWeek.swift */; };
+		E47B63DC2001C89C007DAFB5 /* JTSCalendarWeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63DB2001C89C007DAFB5 /* JTSCalendarWeekDay.swift */; };
+		E47B63DE2001C8A8007DAFB5 /* JTSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63DD2001C8A8007DAFB5 /* JTSContent.swift */; };
+		E47B63E02001C8B2007DAFB5 /* JTSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63DF2001C8B2007DAFB5 /* JTSMenu.swift */; };
+		E47B63E22001C8CF007DAFB5 /* JTSCalendarDelegateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63E12001C8CF007DAFB5 /* JTSCalendarDelegateManager.swift */; };
+		E47B63E42001C8DF007DAFB5 /* JTSCalendarScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63E32001C8DF007DAFB5 /* JTSCalendarScrollManager.swift */; };
+		E47B63E6200339C0007DAFB5 /* JTSCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63E5200339C0007DAFB5 /* JTSCalendarDayView.swift */; };
+		E47B63E82004623A007DAFB5 /* JTSCalendarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63E72004623A007DAFB5 /* JTSCalendarMenuView.swift */; };
+		E47B63EA20046D65007DAFB5 /* JTSCalendarPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63E920046D65007DAFB5 /* JTSCalendarPageView.swift */; };
+		E47B63EC20046DC1007DAFB5 /* JTSCalendarWeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63EB20046DC1007DAFB5 /* JTSCalendarWeekDayView.swift */; };
+		E47B63EE20046E36007DAFB5 /* JTSCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63ED20046E36007DAFB5 /* JTSCalendarWeekView.swift */; };
+		E47B63F020046E97007DAFB5 /* JTSHorizontalCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63EF20046E97007DAFB5 /* JTSHorizontalCalendarView.swift */; };
+		E47B63F220046EED007DAFB5 /* JTSVerticalCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B63F120046EED007DAFB5 /* JTSVerticalCalendarView.swift */; };
+		E47EC6562007046300328535 /* JTSHVCalendarBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47EC6552007046300328535 /* JTSHVCalendarBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +42,26 @@
 		E47B63BE2001C3CD007DAFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E47B63C12001C3CD007DAFB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E47B63C32001C3CD007DAFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47B63CA2001C779007DAFB5 /* JTSCalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarDelegate.swift; sourceTree = "<group>"; };
+		E47B63CC2001C7A8007DAFB5 /* JTSCalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarManager.swift; sourceTree = "<group>"; };
+		E47B63CE2001C7DA007DAFB5 /* JTSCalendarSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarSettings.swift; sourceTree = "<group>"; };
+		E47B63D02001C7F2007DAFB5 /* JTSDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSDateHelper.swift; sourceTree = "<group>"; };
+		E47B63D52001C873007DAFB5 /* JTSCalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarDay.swift; sourceTree = "<group>"; };
+		E47B63D72001C87F007DAFB5 /* JTSCalendarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarPage.swift; sourceTree = "<group>"; };
+		E47B63D92001C88B007DAFB5 /* JTSCalendarWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarWeek.swift; sourceTree = "<group>"; };
+		E47B63DB2001C89C007DAFB5 /* JTSCalendarWeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarWeekDay.swift; sourceTree = "<group>"; };
+		E47B63DD2001C8A8007DAFB5 /* JTSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSContent.swift; sourceTree = "<group>"; };
+		E47B63DF2001C8B2007DAFB5 /* JTSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSMenu.swift; sourceTree = "<group>"; };
+		E47B63E12001C8CF007DAFB5 /* JTSCalendarDelegateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarDelegateManager.swift; sourceTree = "<group>"; };
+		E47B63E32001C8DF007DAFB5 /* JTSCalendarScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarScrollManager.swift; sourceTree = "<group>"; };
+		E47B63E5200339C0007DAFB5 /* JTSCalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarDayView.swift; sourceTree = "<group>"; };
+		E47B63E72004623A007DAFB5 /* JTSCalendarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarMenuView.swift; sourceTree = "<group>"; };
+		E47B63E920046D65007DAFB5 /* JTSCalendarPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarPageView.swift; sourceTree = "<group>"; };
+		E47B63EB20046DC1007DAFB5 /* JTSCalendarWeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarWeekDayView.swift; sourceTree = "<group>"; };
+		E47B63ED20046E36007DAFB5 /* JTSCalendarWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSCalendarWeekView.swift; sourceTree = "<group>"; };
+		E47B63EF20046E97007DAFB5 /* JTSHorizontalCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSHorizontalCalendarView.swift; sourceTree = "<group>"; };
+		E47B63F120046EED007DAFB5 /* JTSVerticalCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSVerticalCalendarView.swift; sourceTree = "<group>"; };
+		E47EC6552007046300328535 /* JTSHVCalendarBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTSHVCalendarBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +78,7 @@
 		E47B63AB2001C3CD007DAFB5 = {
 			isa = PBXGroup;
 			children = (
+				E47B63C92001C6AD007DAFB5 /* JTCalendarSwiftLib */,
 				E47B63B62001C3CD007DAFB5 /* JTCalendarSwift */,
 				E47B63B52001C3CD007DAFB5 /* Products */,
 			);
@@ -62,6 +103,57 @@
 				E47B63C32001C3CD007DAFB5 /* Info.plist */,
 			);
 			path = JTCalendarSwift;
+			sourceTree = "<group>";
+		};
+		E47B63C92001C6AD007DAFB5 /* JTCalendarSwiftLib */ = {
+			isa = PBXGroup;
+			children = (
+				E47B63D42001C80B007DAFB5 /* Views */,
+				E47B63D32001C800007DAFB5 /* Protocols */,
+				E47B63D22001C7F9007DAFB5 /* Managers */,
+				E47B63CA2001C779007DAFB5 /* JTSCalendarDelegate.swift */,
+				E47B63CC2001C7A8007DAFB5 /* JTSCalendarManager.swift */,
+				E47B63CE2001C7DA007DAFB5 /* JTSCalendarSettings.swift */,
+				E47B63D02001C7F2007DAFB5 /* JTSDateHelper.swift */,
+			);
+			path = JTCalendarSwiftLib;
+			sourceTree = "<group>";
+		};
+		E47B63D22001C7F9007DAFB5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E47B63E12001C8CF007DAFB5 /* JTSCalendarDelegateManager.swift */,
+				E47B63E32001C8DF007DAFB5 /* JTSCalendarScrollManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E47B63D32001C800007DAFB5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E47B63D52001C873007DAFB5 /* JTSCalendarDay.swift */,
+				E47B63D72001C87F007DAFB5 /* JTSCalendarPage.swift */,
+				E47B63D92001C88B007DAFB5 /* JTSCalendarWeek.swift */,
+				E47B63DB2001C89C007DAFB5 /* JTSCalendarWeekDay.swift */,
+				E47B63DD2001C8A8007DAFB5 /* JTSContent.swift */,
+				E47B63DF2001C8B2007DAFB5 /* JTSMenu.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E47B63D42001C80B007DAFB5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E47B63E5200339C0007DAFB5 /* JTSCalendarDayView.swift */,
+				E47B63E72004623A007DAFB5 /* JTSCalendarMenuView.swift */,
+				E47B63E920046D65007DAFB5 /* JTSCalendarPageView.swift */,
+				E47B63EB20046DC1007DAFB5 /* JTSCalendarWeekDayView.swift */,
+				E47B63ED20046E36007DAFB5 /* JTSCalendarWeekView.swift */,
+				E47B63EF20046E97007DAFB5 /* JTSHorizontalCalendarView.swift */,
+				E47B63F120046EED007DAFB5 /* JTSVerticalCalendarView.swift */,
+				E47EC6552007046300328535 /* JTSHVCalendarBaseView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +228,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47B63DC2001C89C007DAFB5 /* JTSCalendarWeekDay.swift in Sources */,
+				E47B63D82001C87F007DAFB5 /* JTSCalendarPage.swift in Sources */,
+				E47B63E22001C8CF007DAFB5 /* JTSCalendarDelegateManager.swift in Sources */,
+				E47B63EC20046DC1007DAFB5 /* JTSCalendarWeekDayView.swift in Sources */,
+				E47B63E02001C8B2007DAFB5 /* JTSMenu.swift in Sources */,
+				E47B63CB2001C779007DAFB5 /* JTSCalendarDelegate.swift in Sources */,
+				E47B63F020046E97007DAFB5 /* JTSHorizontalCalendarView.swift in Sources */,
+				E47B63EE20046E36007DAFB5 /* JTSCalendarWeekView.swift in Sources */,
+				E47B63DA2001C88B007DAFB5 /* JTSCalendarWeek.swift in Sources */,
+				E47B63E6200339C0007DAFB5 /* JTSCalendarDayView.swift in Sources */,
+				E47B63D12001C7F2007DAFB5 /* JTSDateHelper.swift in Sources */,
+				E47EC6562007046300328535 /* JTSHVCalendarBaseView.swift in Sources */,
+				E47B63D62001C873007DAFB5 /* JTSCalendarDay.swift in Sources */,
+				E47B63CD2001C7A8007DAFB5 /* JTSCalendarManager.swift in Sources */,
+				E47B63CF2001C7DA007DAFB5 /* JTSCalendarSettings.swift in Sources */,
+				E47B63E42001C8DF007DAFB5 /* JTSCalendarScrollManager.swift in Sources */,
 				E47B63BA2001C3CD007DAFB5 /* ViewController.swift in Sources */,
+				E47B63DE2001C8A8007DAFB5 /* JTSContent.swift in Sources */,
+				E47B63EA20046D65007DAFB5 /* JTSCalendarPageView.swift in Sources */,
+				E47B63F220046EED007DAFB5 /* JTSVerticalCalendarView.swift in Sources */,
 				E47B63B82001C3CD007DAFB5 /* AppDelegate.swift in Sources */,
+				E47B63E82004623A007DAFB5 /* JTSCalendarMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
