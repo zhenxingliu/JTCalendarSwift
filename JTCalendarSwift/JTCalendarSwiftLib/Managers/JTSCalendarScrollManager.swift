@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JTSCalendarScrollManager:NSObject {
+open class JTSCalendarScrollManager:NSObject {
     
     weak var manager:JTSCalendarManager?
     

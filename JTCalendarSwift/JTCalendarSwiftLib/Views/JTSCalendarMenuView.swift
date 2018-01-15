@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum JTSCalendarPageMode : Int {
+open enum JTSCalendarPageMode : Int {
     case full
     case center
     case centerLeft
@@ -17,7 +17,7 @@ enum JTSCalendarPageMode : Int {
 
 
 
-class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
+open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
 
     weak var manager: JTSCalendarManager?
     var contentRatio: CGFloat = 0.0

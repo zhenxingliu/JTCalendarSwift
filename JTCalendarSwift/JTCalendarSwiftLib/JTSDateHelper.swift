@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JTSDateHelper: NSObject {
+open class JTSDateHelper: NSObject {
     
     private var pCalendar:Calendar!
     

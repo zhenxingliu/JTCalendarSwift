@@ -10,7 +10,7 @@ import UIKit
 
 let MAX_WEEKS_BY_MONTH = 6
 
-class JTSCalendarPageView: UIView,JTSCalendarPage {
+open class JTSCalendarPageView: UIView,JTSCalendarPage {
     
     weak var manager: JTSCalendarManager?
     

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol JTSCalendarPage:NSObjectProtocol{
+open protocol JTSCalendarPage:NSObjectProtocol{
     var manager:JTSCalendarManager? { get set }
     var date:Date? { get set }
     func reload()

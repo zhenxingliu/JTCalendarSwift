@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JTSCalendarWeekView: UIView, JTSCalendarWeek {
+open class JTSCalendarWeekView: UIView, JTSCalendarWeek {
     
     weak var manager: JTSCalendarManager?
     

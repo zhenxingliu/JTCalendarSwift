@@ -1,7 +1,7 @@
 //  Converted to Swift 4 by Swiftify v1.0.6577 - https://objectivec2swift.com/
 import UIKit
 
-class JTSCalendarManager: NSObject {
+open class JTSCalendarManager: NSObject {
     
     weak var delegate: JTSCalendarDelegate?
     

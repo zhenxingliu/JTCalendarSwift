@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class JTSCalendarDelegateManager:NSObject {
+open class JTSCalendarDelegateManager:NSObject {
     
     weak var manager: JTSCalendarManager?
     

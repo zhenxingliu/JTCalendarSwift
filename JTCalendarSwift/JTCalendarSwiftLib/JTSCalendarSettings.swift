@@ -1,13 +1,13 @@
 import Foundation
 
-enum JTSCalendarWeekDayFormat : Int {
+open enum JTSCalendarWeekDayFormat : Int {
     case single
     case short
     case full
 }
 
 
-class JTSCalendarSettings: NSObject {
+open class JTSCalendarSettings: NSObject {
     // Content view
     
     var isPageViewHideWhenPossible = false

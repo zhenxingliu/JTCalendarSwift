@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JTSVerticalCalendarView: JTSHVCalendarBaseView {
+open class JTSVerticalCalendarView: JTSHVCalendarBaseView {
     
     private weak var _manager: JTSCalendarManager?
     override weak var manager: JTSCalendarManager? {
