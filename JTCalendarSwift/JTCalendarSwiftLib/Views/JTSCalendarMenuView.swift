@@ -8,7 +8,7 @@
 
 import UIKit
 
-open enum JTSCalendarPageMode : Int {
+public enum JTSCalendarPageMode : Int {
     case full
     case center
     case centerLeft
@@ -19,9 +19,9 @@ open enum JTSCalendarPageMode : Int {
 
 open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
 
-    weak var manager: JTSCalendarManager?
+    weak public var manager: JTSCalendarManager?
     var contentRatio: CGFloat = 0.0
-    var scrollView: UIScrollView?
+    public var scrollView: UIScrollView?
     private var lastSize = CGSize.zero
     private var leftView: UIView?
     private var centerView: UIView?
@@ -34,7 +34,7 @@ open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -52,7 +52,7 @@ open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
         scrollView?.clipsToBounds = false
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         self.resizeViewsIfWithChanged()
     }
@@ -111,7 +111,7 @@ open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
     }
     
     
-    func setPreviousDate(previousDate: Date?, currentDate: Date?, nextDate: Date?) {
+    public func setPreviousDate(previousDate: Date?, currentDate: Date?, nextDate: Date?) {
         assert(currentDate != nil, "currentDate cannot be nil")
         assert(manager != nil, "manager cannot be nil")
         if leftView == nil {
@@ -140,7 +140,7 @@ open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
         
     }
     
-    func updatePageMode(pageMode: JTSCalendarPageMode) {
+    public func updatePageMode(pageMode: JTSCalendarPageMode) {
         if self.pageMode == pageMode {
             return
         }

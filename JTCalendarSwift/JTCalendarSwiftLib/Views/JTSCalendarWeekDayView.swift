@@ -10,7 +10,7 @@ import UIKit
 
 open class JTSCalendarWeekDayView: UIView, JTSCalendarWeekDay {
     
-    weak var manager: JTSCalendarManager?
+    weak public var manager: JTSCalendarManager?
     
     private(set) var dayViews = [UIView]()
     
@@ -33,7 +33,7 @@ open class JTSCalendarWeekDayView: UIView, JTSCalendarWeekDay {
     /*!
      * Rebuild the view, must be call if you change `weekDayFormat` or `firstWeekday`
      */
-    func reload() {
+    public func reload() {
         assert(manager != nil, "manager cannot be nil")
         let dateFormatter = manager?.dateHelper?.createDateFormatter()
         var days: [Any]? = nil
@@ -73,12 +73,12 @@ open class JTSCalendarWeekDayView: UIView, JTSCalendarWeekDay {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         if dayViews.isEmpty {
             return

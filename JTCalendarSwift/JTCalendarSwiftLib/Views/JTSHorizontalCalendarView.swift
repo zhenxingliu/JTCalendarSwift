@@ -12,7 +12,7 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
     
     private weak var _manager: JTSCalendarManager?
     
-    override weak var manager: JTSCalendarManager? {
+    override weak public var manager: JTSCalendarManager? {
         get {
             return _manager
         }
@@ -24,7 +24,7 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
     
     private var _date: Date?
     
-    override var date: Date? {
+    override public var date: Date? {
         get {
             return _date
         }
@@ -73,12 +73,12 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         resizeViewsIfWidthChanged()
         viewDidScroll()
     }
@@ -127,7 +127,7 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
         manager?.scrollManager?.updateMenuContentOffset(percentage: (contentOffset.x / contentSize.width), pageMode: pageMode!)
     }
     
-    override func loadPreviousPageWithAnimation() {
+    override open func loadPreviousPageWithAnimation() {
         switch pageMode! {
         case .centerRight, .center:
             return
@@ -139,7 +139,7 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
         setContentOffset(point, animated: true)
     }
     
-    override func loadNextPageWithAnimation() {
+    override open func loadNextPageWithAnimation() {
         switch pageMode! {
         case .centerLeft, .center:
             return
@@ -152,7 +152,7 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
     }
     
     
-    override func loadPreviousPage() {
+    override open func loadPreviousPage() {
         let nextDate: Date? = manager?.delegateManager?.dateForPreviousPageWithCurrentDate(leftView?.date)
         // Must be set before chaging date for PageView for updating day views
         date = leftView?.date
@@ -205,7 +205,7 @@ open class JTSHorizontalCalendarView: JTSHVCalendarBaseView {
 //        }
     }
     
-    override func loadNextPage() {
+    override open func loadNextPage() {
         let nextDate: Date? = manager?.delegateManager?.dateForNextPageWithCurrentDate(rightView?.date)
         // Must be set before chaging date for PageView for updating day views
         date = rightView?.date

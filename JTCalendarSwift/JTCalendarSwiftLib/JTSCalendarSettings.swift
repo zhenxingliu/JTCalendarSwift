@@ -1,6 +1,6 @@
 import Foundation
 
-open enum JTSCalendarWeekDayFormat : Int {
+public enum JTSCalendarWeekDayFormat : Int {
     case single
     case short
     case full

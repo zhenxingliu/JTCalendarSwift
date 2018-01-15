@@ -10,9 +10,9 @@ import UIKit
 
 open class JTSCalendarWeekView: UIView, JTSCalendarWeek {
     
-    weak var manager: JTSCalendarManager?
+    weak public var manager: JTSCalendarManager?
     
-    var startDate: Date?
+    public var startDate: Date?
     
     private var daysViews = [JTSCalendarDayView]()
     
@@ -28,12 +28,12 @@ open class JTSCalendarWeekView: UIView, JTSCalendarWeek {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    func setStartDate(_ startDate: Date?, updateAnotherMonth enable: Bool, monthDate: Date?) {
+    public func setStartDate(_ startDate: Date?, updateAnotherMonth enable: Bool, monthDate: Date?) {
         assert(startDate != nil, "startDate cannot be nil")
         assert(manager != nil, "manager cannot be nil")
         if enable {
@@ -76,7 +76,7 @@ open class JTSCalendarWeekView: UIView, JTSCalendarWeek {
         }
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         if daysViews.isEmpty {
             return

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-open protocol JTSCalendarDay:NSObjectProtocol {
+public protocol JTSCalendarDay:NSObjectProtocol {
     var date:Date? { get set }
     var isFromAnotherMonth:Bool { get set }
     var manager:JTSCalendarManager? { get set }

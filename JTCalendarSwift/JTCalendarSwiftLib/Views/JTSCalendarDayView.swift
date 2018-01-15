@@ -10,11 +10,11 @@ import UIKit
 
 open class JTSCalendarDayView: UIView, JTSCalendarDay {
     
-    weak var manager: JTSCalendarManager?
+    weak public var manager: JTSCalendarManager?
     
     private var _date: Date?
     
-    var date: Date? {
+    public var date: Date? {
         get {
             return _date
         }
@@ -36,7 +36,7 @@ open class JTSCalendarDayView: UIView, JTSCalendarDay {
     
     var dotRatio: CGFloat = 0.0
     
-    var isFromAnotherMonth = false
+    public var isFromAnotherMonth = false
     
     /*!
      * Must be call if override the class
@@ -80,12 +80,12 @@ open class JTSCalendarDayView: UIView, JTSCalendarDay {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         textLabel?.frame = bounds
         var sizeCircle: CGFloat = min(frame.size.width, frame.size.height)

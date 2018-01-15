@@ -7,7 +7,7 @@
 //
 
 import Foundation
-open protocol JTSCalendarWeek:NSObjectProtocol {
+public protocol JTSCalendarWeek:NSObjectProtocol {
     
     var manager:JTSCalendarManager? { get set }
     

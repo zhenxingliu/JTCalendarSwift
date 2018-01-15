@@ -12,10 +12,10 @@ let MAX_WEEKS_BY_MONTH = 6
 
 open class JTSCalendarPageView: UIView,JTSCalendarPage {
     
-    weak var manager: JTSCalendarManager?
+    weak public var manager: JTSCalendarManager?
     
     private var _date: Date?
-    var date: Date? {
+    public var date: Date? {
         get {
             return _date
         }
@@ -43,12 +43,12 @@ open class JTSCalendarPageView: UIView,JTSCalendarPage {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    func reload() {
+    public func reload() {
         if (manager?.settings?.isPageViewHaveWeekDaysView)! && weekDayView == nil {
             weekDayView = manager?.delegateManager?.buildWeekDayView()
             addSubview(weekDayView!)
@@ -94,7 +94,7 @@ open class JTSCalendarPageView: UIView,JTSCalendarPage {
         }
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         if weeksViews.isEmpty {
             return

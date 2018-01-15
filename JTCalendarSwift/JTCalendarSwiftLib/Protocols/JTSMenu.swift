@@ -7,7 +7,7 @@
 //
 
 import UIKit
-open protocol  JTSMenu:NSObjectProtocol {
+public protocol  JTSMenu:NSObjectProtocol {
     
     var manager:JTSCalendarManager? { get set}
     

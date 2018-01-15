@@ -7,7 +7,7 @@
 //
 
 import Foundation
-open protocol JTSCalendarWeekDay:NSObjectProtocol {
+public protocol JTSCalendarWeekDay:NSObjectProtocol {
     var manager:JTSCalendarManager? { get set }
     func reload()
 }

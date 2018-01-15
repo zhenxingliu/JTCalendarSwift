@@ -10,9 +10,9 @@ import UIKit
 
 open class JTSHVCalendarBaseView: UIScrollView,JTSContent {
     
-    weak var manager: JTSCalendarManager?
+    weak public var manager: JTSCalendarManager?
     
-    var date: Date?
+    public var date: Date?
     
     open func loadPreviousPage() {
        fatalError("loadPreviousPage未实现")
