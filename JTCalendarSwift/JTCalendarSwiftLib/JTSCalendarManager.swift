@@ -65,7 +65,7 @@ open class JTSCalendarManager: NSObject {
         contentView?.date = contentView?.date
     }
     
-    override init() {
+    override public init() {
         super.init()
         commonInit()
     }

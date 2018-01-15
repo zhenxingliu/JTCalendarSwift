@@ -35,7 +35,7 @@ open class JTSCalendarSettings: NSObject {
         pageViewWeekModeNumberOfWeeks = 1
     }
     
-    override init() {
+    override public init() {
         super.init()
         commonInit()
     }
