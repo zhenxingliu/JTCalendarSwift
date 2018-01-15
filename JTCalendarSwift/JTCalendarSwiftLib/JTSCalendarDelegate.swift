@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol JTSCalendarDelegate: NSObjectProtocol {
+ @objc public protocol JTSCalendarDelegate: NSObjectProtocol {
     // Menu view
     /*!
      * Provide a UIView, used as page for the menuView.

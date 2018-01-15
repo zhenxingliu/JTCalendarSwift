@@ -3,11 +3,11 @@ import UIKit
 
 open class JTSCalendarManager: NSObject {
     
-    weak var delegate: JTSCalendarDelegate?
+    public weak var delegate: JTSCalendarDelegate?
     
     private weak var _menuView: JTSCalendarMenuView?
     
-    weak var menuView: JTSCalendarMenuView? {
+    public  weak var menuView: JTSCalendarMenuView? {
         get {
             return _menuView
         }
@@ -20,7 +20,7 @@ open class JTSCalendarManager: NSObject {
     }
     private weak var _contentView: JTSHVCalendarBaseView?
     
-    weak var contentView: JTSHVCalendarBaseView? {
+    public  weak var contentView: JTSHVCalendarBaseView? {
         get {
             return _contentView
         }
@@ -37,8 +37,8 @@ open class JTSCalendarManager: NSObject {
             }
         }
     }
-    private(set) var dateHelper: JTSDateHelper?
-    private(set) var settings: JTSCalendarSettings?
+    public  var dateHelper: JTSDateHelper?
+    public var settings: JTSCalendarSettings?
     // Intern methods
     private(set) var delegateManager: JTSCalendarDelegateManager?
     private(set) var scrollManager: JTSCalendarScrollManager?
@@ -53,15 +53,15 @@ open class JTSCalendarManager: NSObject {
         scrollManager?.manager = self
     }
     
-    func date() -> Date {
+    public func date() -> Date {
         return _contentView!.date!
     }
     
-    func setDate(_ date: Date) {
+    public func setDate(_ date: Date) {
         _contentView?.date = date
     }
     
-    func reload() {
+    public func reload() {
         contentView?.date = contentView?.date
     }
     
