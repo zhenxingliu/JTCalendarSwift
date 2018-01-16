@@ -7,21 +7,21 @@ public enum JTSCalendarWeekDayFormat : Int {
 }
 
 
-open class JTSCalendarSettings: NSObject {
+public class JTSCalendarSettings: NSObject {
     // Content view
     
-    var isPageViewHideWhenPossible = false
-    var isWeekModeEnabled = false
+    public var isPageViewHideWhenPossible = false
+    public var isWeekModeEnabled = false
     // Page view
     // Must be less or equalt to 6, 0 for automatic
-    var pageViewNumberOfWeeks: Int = 0
-    var isPageViewHaveWeekDaysView = false
-    var pageViewWeekModeNumberOfWeeks: Int = 0
-    var isPageViewWeekDaysViewAutomaticHeight = false
+    public var pageViewNumberOfWeeks: Int = 0
+    public var isPageViewHaveWeekDaysView = false
+    public var pageViewWeekModeNumberOfWeeks: Int = 0
+    public var isPageViewWeekDaysViewAutomaticHeight = false
     // WeekDay view
-    var weekDayFormat: JTSCalendarWeekDayFormat?
+    public var weekDayFormat: JTSCalendarWeekDayFormat?
     // Day view
-    var isZeroPaddedDayFormat = false
+    public var isZeroPaddedDayFormat = false
     
     // Use for override
     func commonInit() {

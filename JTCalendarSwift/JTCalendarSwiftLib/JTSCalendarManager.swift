@@ -1,12 +1,25 @@
 //  Converted to Swift 4 by Swiftify v1.0.6577 - https://objectivec2swift.com/
 import UIKit
 
-open class JTSCalendarManager: NSObject {
+public class JTSCalendarManager: NSObject {
     
     public weak var delegate: JTSCalendarDelegate?
     
-    private weak var _menuView: JTSCalendarMenuView?
+    private var _dateHelper: JTSDateHelper?
+    public var dateHelper:JTSDateHelper? {
+        get {
+            return _dateHelper
+        }
+    }
     
+    private var _settings: JTSCalendarSettings?
+    public var settings:JTSCalendarSettings?{
+        get {
+            return _settings
+        }
+    }
+    
+    private weak var _menuView: JTSCalendarMenuView?
     public  weak var menuView: JTSCalendarMenuView? {
         get {
             return _menuView
@@ -18,8 +31,8 @@ open class JTSCalendarManager: NSObject {
             scrollManager?.menuView = _menuView
         }
     }
-    private weak var _contentView: JTSHVCalendarBaseView?
     
+    private weak var _contentView: JTSHVCalendarBaseView?
     public  weak var contentView: JTSHVCalendarBaseView? {
         get {
             return _contentView
@@ -37,16 +50,14 @@ open class JTSCalendarManager: NSObject {
             }
         }
     }
-    public  var dateHelper: JTSDateHelper?
-    public var settings: JTSCalendarSettings?
-    // Intern methods
+
     private(set) var delegateManager: JTSCalendarDelegateManager?
     private(set) var scrollManager: JTSCalendarScrollManager?
     
     // Use for override
     func commonInit() {
-        dateHelper = JTSDateHelper()
-        settings = JTSCalendarSettings()
+        _dateHelper = JTSDateHelper()
+        _settings = JTSCalendarSettings()
         delegateManager = JTSCalendarDelegateManager()
         delegateManager?.manager = self
         scrollManager = JTSCalendarScrollManager()

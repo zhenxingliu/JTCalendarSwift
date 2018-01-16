@@ -22,7 +22,7 @@ open class JTSVerticalCalendarView: JTSHVCalendarBaseView {
     }
     
     private var _date: Date?
-    override public var date: Date? {
+    override open var date: Date? {
         get {
             return _date
         }

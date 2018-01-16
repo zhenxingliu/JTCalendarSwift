@@ -26,11 +26,11 @@ open class JTSCalendarDayView: UIView, JTSCalendarDay {
         }
     }
     
-    private(set) var circleView: UIView?
+    public var circleView: UIView?
     
-    private(set) var dotView: UIView?
+    public var dotView: UIView?
     
-    private(set) var textLabel: UILabel?
+    public var textLabel: UILabel?
     
     var circleRatio: CGFloat = 0.0
     
