@@ -42,9 +42,8 @@ open class JTSCalendarMenuView: UIView,JTSMenu,UIScrollViewDelegate {
     private func commonInit(){
         self.clipsToBounds = true
         contentRatio = 1.0
-        
         scrollView = UIScrollView()
-        self.addSubview(scrollView!)
+        self.insertSubview(scrollView!, at: 0)
         scrollView?.showsHorizontalScrollIndicator = false
         scrollView?.showsVerticalScrollIndicator = false
         scrollView?.isPagingEnabled = true
